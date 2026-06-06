@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070d1f" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="略語100" />
+  <meta name="description" content="基本情報技術者試験 英略語100 暗記アプリ" />
+  <title>英略語100 暗記</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body, #root { height: 100%; }
+    body {
+      background: #070d1f;
+      color: #c2d2f0;
+      font-family: 'Hiragino Sans', 'Segoe UI', system-ui, sans-serif;
+      overscroll-behavior: none;
+    }
+    #splash {
+      position: fixed; inset: 0;
+      background: #070d1f;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 16px;
+      z-index: 9999; transition: opacity 0.4s;
+    }
+    #splash span { font-size: 40px; }
+    #splash p { font-size: 13px; color: #4f8ef7; letter-spacing: 3px; }
+  </style>
+</head>
+<body>
+  <div id="splash">
+    <span>📇</span>
+    <p>英略語 100 暗記</p>
+  </div>
+  <div id="root"></div>
+  <script>
+    window.addEventListener('load', () => {
+      const splash = document.getElementById('splash');
+      setTimeout(() => { splash.style.opacity = '0'; setTimeout(() => splash.remove(), 400); }, 600);
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      }
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

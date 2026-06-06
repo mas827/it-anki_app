@@ -1,0 +1,16 @@
+{
+  "name": "英略語100 暗記アプリ",
+  "short_name": "略語100",
+  "description": "基本情報技術者試験 英略語100 暗記アプリ（かやのき先生の教室シリーズ）",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070d1f",
+  "theme_color": "#070d1f",
+  "lang": "ja",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
